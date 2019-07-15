@@ -1,0 +1,23 @@
+<div *ngIf="user">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+        <h2>{{user.first_name | uppercase}} Details</h2>
+        <img src='{{user.avatar}}' />
+        <div><span>id: </span>{{user.id}}</div>
+        <div>
+            <label>Email:
+                <input type="email" formControlName="email" placeholder="Email" />
+            </label>
+        </div>
+        <div>
+            <label>First name:
+                <input type="text" formControlName="first_name" placeholder="first name"/>
+            </label>
+        </div>
+        <div>
+          <label>Last name:
+            <input type="text" formControlName="last_name" placeholder="last name" />
+          </label>
+        </div>
+        <button type="submit" [disabled]="!profileForm.valid">Update</button>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Create New User</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+    <div mat-dialog-content>
+        <mat-form-field>
+            <p>Email:</p>
+            <input  matInput  type="email" formControlName="email"  />
+            <p>First name:</p>
+            <input  matInput  type="text" formControlName="first_name"/>
+            <p>Last name:</p>
+            <input  matInput  type="text" formControlName="last_name" />
+
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancle</button>
+        <button mat-button type="submit" [disabled]="!profileForm.valid">Update</button>
+    </div>
+</form>
